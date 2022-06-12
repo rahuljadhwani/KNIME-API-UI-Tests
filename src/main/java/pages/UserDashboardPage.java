@@ -32,9 +32,9 @@ public class UserDashboardPage extends BasePage{
         return new HomePage();
     }
 
-    public SpacesMainPage clickUserSpaces(){
+    public YourSpacesPage clickUserSpaces(){
         click(By.xpath(String.format(userSubMenu, "Spaces")), "User Spaces link");
-        return new SpacesMainPage();
+        return new YourSpacesPage();
     }
 
     public UserDashboardPage enterSearchText(){
