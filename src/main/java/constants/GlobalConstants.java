@@ -22,4 +22,19 @@ public class GlobalConstants {
     @Setter
     private static HashMap<String, String> propertyMap;
 
+    private static final String EXTENTREPORTFOLDERPATH = System.getProperty("user.dir")+"/extent-test-output/";
+    private static String extentReportFilePath = "";
+
+
+    public static String getExtentReportFilePath(){
+        if(extentReportFilePath.isEmpty()){
+            extentReportFilePath = createExtentReportPath();
+        }
+        return extentReportFilePath;
+    }
+
+    private static String createExtentReportPath() {
+        return EXTENTREPORTFOLDERPATH+"/index.html";
+    }
+
 }

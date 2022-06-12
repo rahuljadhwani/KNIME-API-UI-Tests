@@ -5,14 +5,14 @@ import pages.HomePage;
 public class TestOne extends BaseTest {
 
 
-    @Test
+    @Test(description = "Knime hub login test")
     public void testKnimeHubLogin() {
         new HomePage().clickAcceptCookies().clickOnSignInButton().enterUsername(GlobalConstants.getPropertyMap().get("username"))
                 .enterPassword(GlobalConstants.getPropertyMap().get("password")).clickSubmitButton()
                 .clickAvatarProfile().clickLogout();
     }
 
-    @Test(dependsOnMethods = "testKnimeHubLogin")
+    @Test(dependsOnMethods = "testKnimeHubLogin", description = " Create and Delete Public space on KNIME hub test")
     public void testCreateAndDeletePublicSpace() {
         new HomePage().clickAcceptCookies().clickOnSignInButton().enterUsername(GlobalConstants.getPropertyMap().get("username"))
                 .enterPassword(GlobalConstants.getPropertyMap().get("password")).clickSubmitButton().clickAvatarProfile().clickUserSpaces()
@@ -20,7 +20,7 @@ public class TestOne extends BaseTest {
                 .enterSpaceNameToDeleteSpace().deleteSpaceConfirm().verifySpaceDeletedMessage();
     }
 
-    @Test(dependsOnMethods = "testKnimeHubLogin")
+    @Test(dependsOnMethods = "testKnimeHubLogin", description = " Create and Delete Private space on KNIME hub test")
     public void testCreateAndDeletePrivateSpace() {
         new HomePage().clickAcceptCookies().clickOnSignInButton().enterUsername(GlobalConstants.getPropertyMap().get("username"))
                 .enterPassword(GlobalConstants.getPropertyMap().get("password")).clickSubmitButton().clickAvatarProfile().clickUserSpaces()
