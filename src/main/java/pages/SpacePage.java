@@ -21,6 +21,8 @@ public class SpacePage extends BasePage{
     By changeVisibilityConfirmationHeader = By.xpath("//div[@class='header']/*[text()='Make this space private']");
     By changeVisibilityConfirmButton = By.xpath("//button[contains(text(),'make this space private')]");
 
+    By currentSpaceName = By.xpath("//div[@class='confirmation']/descendant::strong");
+
 
     public Object verifySpaceCreated(){
         /*if(true) return this;
@@ -53,14 +55,27 @@ public class SpacePage extends BasePage{
         return this;
     }
 
-    public YourSpacesPage deleteSpace(String spaceName){
+    public SpacePage deleteSpace(){
         click(deleteSpaceButton, "Delete Space button");
-        //wait for header to appear
+        return this;
+    }
+
+    public SpacePage enterSpaceNameToDeleteSpace(String spaceName){
         sendKeys(enterSpaceNameToConfirmAction, spaceName, "Space name in Deletion textarea");
+        return this;
+    }
+
+    public SpacePage enterSpaceNameToDeleteSpace(){
+        sendKeys(enterSpaceNameToConfirmAction, getText(currentSpaceName), "Space name in Deletion textarea");
+        return this;
+    }
+
+
+    public YourSpacesPage deleteSpaceConfirm(){
         click(deleteSpaceConfirmationButton, "Delete Space permanently button");
-        //assert deletion message
         return new YourSpacesPage();
     }
+
 
     public SpacePage changeSpaceVisibility(String spaceName){
         click(changeSpaceVisibilityButton, "Change Space visibility button");

@@ -8,7 +8,7 @@ public class HomePage extends BasePage{
     By acceptCookiesButton = By.xpath("    //*[text()='Cookie settings']/parent::div/following-sibling::div/button[normalize-space()='Accept and close']");
 
 
-    public HomePage clickAcceptCookies() throws InterruptedException {
+    public HomePage clickAcceptCookies() {
         click(acceptCookiesButton, "Accept cookies and close button");
         return this;
     }

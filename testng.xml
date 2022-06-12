@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="KNIME-test-suite" preserve-order="true">
+<suite name="KNIME-test-suite" parallel="methods" preserve-order="true">
 
 
-    <test name="Test public space creation">
+    <test name="Test space creation">
         <classes>
             <class name="TestOne"/>
         </classes>

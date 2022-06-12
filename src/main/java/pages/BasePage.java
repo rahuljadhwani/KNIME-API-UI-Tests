@@ -22,4 +22,12 @@ public class BasePage {
         getDriver().findElement(locator).sendKeys(dataToEnter);
     }
 
+    public static void checkIfDisplayed(By locator){
+        WaitUtil.waitForVisibility(locator).isDisplayed();
+    }
+
+    public static String getText(By locator){
+        return WaitUtil.waitForVisibility(locator).getText();
+    }
+
 }
