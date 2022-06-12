@@ -8,19 +8,19 @@ public class LoginPage extends BasePage{
     By passwordInputField = By.xpath("//form[@class='user-login-form']//input[@id='edit-pass']");
     By submitButton = By.xpath("//form[@class='user-login-form']//button[@id='edit-submit']");
 
-    public LoginPage enterUsername(){
-        sendKeys(usernameInputField, "", "Username");
+    public LoginPage enterUsername(String username){
+        sendKeys(usernameInputField, username, "Username");
         return this;
     }
 
-    public LoginPage enterPassword(){
-        sendKeys(passwordInputField, "", "Password");
+    public LoginPage enterPassword(String password){
+        sendKeys(passwordInputField, password, "Password");
         return this;
     }
 
-    public LoginPage clickSubmitButton(){
+    public UserDashboardPage clickSubmitButton(){
         click(submitButton, "Sign in button on login page");
-        return this;
+        return new UserDashboardPage();
     }
 
 }
