@@ -2,6 +2,10 @@ package reports;
 
 import com.aventstack.extentreports.ExtentTest;
 
+/**
+ * This class contains logic for handling ExtentTest objects for multiple threads
+ *
+ */
 public final class ExtentsManager {
 
     private ExtentsManager(){

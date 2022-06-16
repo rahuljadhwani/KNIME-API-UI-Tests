@@ -1,8 +1,11 @@
 package constants;
 
-import static utils.api.SpaceNameGenUtil.generateSpaceName;
+import static utils.api.SpaceNameGenUtil.*;
 
-public final class APIPaths {
+/**
+ * This class will contain all the API paths
+ */
+public class APIPaths {
 
     /**
      * Constructor is made private to prevent object-creation of this class, as this class contains all static methods.
@@ -13,6 +16,7 @@ public final class APIPaths {
 
     private static final String baseURI = "https://api.hub.knime.com";
     private static String createSpacePath = "/repository/Users/%s/%s";
+    private static String deleteSpacePath = "/repository/Users/%s/%s";
 
     public static String getBaseURI(){
         return baseURI;
@@ -20,6 +24,10 @@ public final class APIPaths {
 
     public static String getCreateSpacePath(){
         return String.format(createSpacePath, GlobalConstants.getPropertyMap().get("username"), generateSpaceName());
+    }
+
+    public static String getDeleteSpacePath(){
+        return String.format(deleteSpacePath, GlobalConstants.getPropertyMap().get("username"), getSpaceName());
     }
 
 

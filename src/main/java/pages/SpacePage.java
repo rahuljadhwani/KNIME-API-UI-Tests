@@ -1,7 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
+
+/**
+ * This class contains action methods for web elements present on Space Page
+ *
+ */
 
 public class SpacePage extends BasePage{
 

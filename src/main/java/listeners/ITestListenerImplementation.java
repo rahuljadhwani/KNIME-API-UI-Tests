@@ -3,7 +3,12 @@ package listeners;
 import org.testng.*;
 import reports.ExtentLogger;
 import reports.ExtentReportsImplementation;
+import java.util.Arrays;
 
+/**
+ * This class is responsible for adding logs to reports according to tests' results
+ *
+ */
 public class ITestListenerImplementation implements ITestListener, ISuiteListener {
 
     @Override
@@ -18,7 +23,9 @@ public class ITestListenerImplementation implements ITestListener, ISuiteListene
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentLogger.fail(result.getMethod().getMethodName()+" has failed");
+         if(Arrays.asList(result.getMethod().getGroups()).contains("API")){
+             ExtentLogger.fail(result.getMethod().getMethodName()+" has failed");
+         }else ExtentLogger.failWithScreenshot(result.getMethod().getMethodName()+" has failed");
     }
 
     @Override

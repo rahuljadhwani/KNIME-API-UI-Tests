@@ -8,7 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class PropertyReaderUtil {
+
+/**
+ * This class contains logic for reading properties file and return it as a map
+ *
+ */
+public final class PropertyReaderUtil {
+
+    private PropertyReaderUtil(){
+
+    }
 
     static HashMap<String, String> propertyFileData = new HashMap<>();
 
@@ -30,6 +39,10 @@ public class PropertyReaderUtil {
             propertyFileData.put((String) entry.getKey(), CryptUtil.decodeData((String) entry.getValue()));
         }
         return propertyFileData;
+    }
+
+    public static void emptyPropertyMap(){
+        propertyFileData = null;
     }
 
 }

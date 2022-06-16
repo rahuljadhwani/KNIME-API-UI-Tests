@@ -10,6 +10,10 @@ import utils.WaitUtil;
 
 import java.util.Set;
 
+/**
+ * This class contains reusable methods by UI Page objects
+ *
+ */
 public class BasePage {
 
 

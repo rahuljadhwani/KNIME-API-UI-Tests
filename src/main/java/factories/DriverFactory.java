@@ -8,9 +8,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Objects;
 
+/**
+ * This class is responsible to deliver Driver objects with options when passed "browser" String from command line
+ */
 public class DriverFactory {
 
-    //private constructor to restrict object creation
+    /**
+     * private constructor to restrict object creation
+     */
     private DriverFactory() {
     }
 

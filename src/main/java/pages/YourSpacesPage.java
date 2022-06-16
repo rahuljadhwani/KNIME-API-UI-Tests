@@ -7,8 +7,11 @@ import org.testng.Assert;
 import reports.ExtentLogger;
 
 import java.util.List;
-import java.util.Set;
 
+/**
+ * This class contains action methods for web elements present on Your Spaces Page
+ *
+ */
 public class YourSpacesPage extends BasePage{
         String createNewSpaceButtons = "//ul[@class='space-list']/li/div/h3[text()='Create new space']//following-sibling::div/button[normalize-space()='%s']";
         By spaceCreatedMessage = By.xpath("//span[contains(text(),'Your new space was created successfully!')]");

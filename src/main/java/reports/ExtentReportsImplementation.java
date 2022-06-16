@@ -10,6 +10,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+
+/**
+ * This class contains methods to initialize and flush extent reports
+ *
+ */
 public class ExtentReportsImplementation {
 
     private static ExtentReports extentReports;
@@ -30,12 +35,11 @@ public class ExtentReportsImplementation {
         if(Objects.nonNull(extentReports)){
             extentReports.flush();
         }
-        //to check
-        try {
+        /*try {
             Desktop.getDesktop().browse(new File(GlobalConstants.getExtentReportFilePath()).toURI());
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public static void createTest(String testcaseName){

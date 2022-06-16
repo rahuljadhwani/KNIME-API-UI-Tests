@@ -1,5 +1,8 @@
 package enums;
 
+/**
+ * This enum contains Space types used for UI validations and creating API paths
+ */
 public enum SpaceTypes {
 
     PUBLIC("Public space"),

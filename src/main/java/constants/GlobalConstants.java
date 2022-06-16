@@ -6,8 +6,14 @@ import utils.PropertyReaderUtil;
 
 import java.util.HashMap;
 
+/**
+ * This class contains Global constants used across the framework
+ */
 public class GlobalConstants {
 
+    /**
+     * This static block will load Global property map with data from mentioned Property file
+     */
     static  {
         GlobalConstants.setPropertyMap(PropertyReaderUtil.readPropertyFileAsMap(GlobalConstants.getFrameworkPropertyFilePath()));
     }

@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 
+/**
+ * This class contains action methods for web elements present on HomePage
+ *
+ */
 public class LoginPage extends BasePage{
 
     By usernameInputField = By.xpath("//form[@class='user-login-form']//input[@id='edit-name']");
@@ -28,14 +32,14 @@ public class LoginPage extends BasePage{
         return this;
     }
 
-    public UserDashboardPage clickSubmitButton(){
+    public WelcomePage clickSubmitButton(){
         click(submitButton, "Sign in button on login page");
-        return new UserDashboardPage();
+        return new WelcomePage();
     }
 
-    public UserDashboardPage clickSubmitButtonWoLogging(){
+    public WelcomePage clickSubmitButtonWoLogging(){
         click(submitButton);
-        return new UserDashboardPage();
+        return new WelcomePage();
     }
 
 }

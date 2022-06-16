@@ -2,7 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class UserDashboardPage extends BasePage{
+/**
+ * This class contains action methods for web elements present on Welcome Page
+ *
+ */
+public class WelcomePage extends BasePage{
 
     By userProfileIcon = By.xpath("//div[contains(@class, 'avatar-profile')]/parent::button");
     By searchBox = By.xpath("//form[@id='search']//input[@name='q']");
@@ -17,12 +21,12 @@ public class UserDashboardPage extends BasePage{
         return "";
     }
 
-    public UserDashboardPage clickAvatarProfile(){
+    public WelcomePage clickAvatarProfile(){
         click(userProfileIcon, "User profile avatar");
         return this;
     }
 
-    public UserDashboardPage clickAvatarProfileWoLogging(){
+    public WelcomePage clickAvatarProfileWoLogging(){
         click(userProfileIcon);
         return this;
     }
@@ -47,18 +51,18 @@ public class UserDashboardPage extends BasePage{
         return new YourSpacesPage();
     }
 
-    public UserDashboardPage enterSearchText(){
+    public WelcomePage enterSearchText(){
         click(searchBox, "Search box");
         sendKeys(searchBox, "", "Search box");
         return this;
     }
 
-    public UserDashboardPage clickSearchButton(){
+    public WelcomePage clickSearchButton(){
         click(searchButton, "Search button");
         return this;
     }
 
-    public UserDashboardPage clickClearSearchText(){
+    public WelcomePage clickClearSearchText(){
         click(clearSearchText, "Clear search text button");
         return this;
     }

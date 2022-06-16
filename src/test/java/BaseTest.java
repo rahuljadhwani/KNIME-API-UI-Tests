@@ -1,14 +1,21 @@
 import constants.GlobalConstants;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import pages.HomePage;
-import pages.UserDashboardPage;
+import pages.WelcomePage;
+import utils.DataStorageUtil;
 import utils.DriverUtil;
+import utils.PropertyReaderUtil;
 import utils.api.TokenManager;
 
 
+/**
+ * This class contains setup and teardown steps for tests
+ *
+ */
 public class BaseTest {
 
     @BeforeSuite(groups = "API")
@@ -17,7 +24,7 @@ public class BaseTest {
         new HomePage().clickAcceptCookiesWithoutLogging().clickOnSignInButtonWithoutLogging().enterUsernameWoLogging(GlobalConstants.getPropertyMap().get("username"))
                 .enterPasswordWoLogging(GlobalConstants.getPropertyMap().get("password")).clickSubmitButtonWoLogging();
         TokenManager.setCookies(getDriver().manage().getCookies());
-        new UserDashboardPage().clickAvatarProfileWoLogging().clickLogoutWoLogging();
+        new WelcomePage().clickAvatarProfileWoLogging().clickLogoutWoLogging();
         DriverUtil.unloadWebDriver();
     }
 
@@ -36,7 +43,10 @@ public class BaseTest {
         return DriverUtil.getWebDriver();
     }
 
-
-
+    @AfterSuite
+    public void suiteTeardown(){
+        DataStorageUtil.destroyDataStorage();
+        PropertyReaderUtil.emptyPropertyMap();
+    }
 
 }

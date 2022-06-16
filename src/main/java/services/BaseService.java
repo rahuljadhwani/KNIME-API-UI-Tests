@@ -8,6 +8,11 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+
+/**
+ * This class is used to build Request and Response specification for APIs
+ *
+ */
 public class BaseService {
 
     public static RequestSpecification getRequestSpec(String basePath) {

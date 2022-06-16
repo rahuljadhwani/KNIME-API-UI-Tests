@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import reports.ExtentLogger;
 
+/**
+ * This class contains action methods for web elements present on HomePage
+ *
+ */
 public class HomePage extends BasePage{
 
     By signinButton = By.xpath("//div[@class='login']/button[normalize-space()='Sign in']");

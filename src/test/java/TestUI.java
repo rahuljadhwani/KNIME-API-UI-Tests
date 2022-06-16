@@ -3,9 +3,12 @@ import enums.SpaceTypes;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SpacePage;
-import pages.UserDashboardPage;
-import pages.YourSpacesPage;
+import pages.WelcomePage;
 
+/**
+ * This class contains UI test methods
+ *
+ */
 public class TestUI extends BaseTest {
 
 
@@ -16,19 +19,19 @@ public class TestUI extends BaseTest {
                 .clickAvatarProfile().clickLogout();
     }
 
-    @Test(description = " Create and Delete Public space on KNIME hub test", groups = "UI")
+    @Test(description = " UI test - Create and Delete Public space on KNIME hub test", groups = "UI")
     public void testCreateAndDeletePublicSpace() {
         createPublicSpace().clickMoreOptions().deleteSpace().enterSpaceNameToDeleteSpace()
                 .deleteSpaceConfirm().verifySpaceDeletedMessage();
     }
 
-    @Test(description = " Create and Delete Private space on KNIME hub test", groups = "UI")
+    @Test(description = " UI test - Create and Delete Private space on KNIME hub test", groups = "UI")
     public void testCreateAndDeletePrivateSpace() {
         createPrivateSpace().clickMoreOptions().deleteSpace().enterSpaceNameToDeleteSpace()
                 .deleteSpaceConfirm().verifySpaceDeletedMessage();
     }
 
-    @Test(description = "Verify UI elements on Your spaces page", groups = "UI")
+    @Test(description = " UI test - Verify UI elements on Your spaces page", groups = "UI")
     public void testWebElementsOnYourSpacesPage(){
         loginToKNIMEHub().clickAvatarProfile().clickUserSpaces().verifyYourSpacesHeader()
                 .verifySpaceList().verifyCreateNewSpaceOptions().verifyFooterDetails();
@@ -45,7 +48,7 @@ public class TestUI extends BaseTest {
                 .verifySpaceCreatedMessage();
     }
 
-    private UserDashboardPage loginToKNIMEHub(){
+    private WelcomePage loginToKNIMEHub(){
         return new HomePage().clickAcceptCookies().clickOnSignInButton().enterUsername(GlobalConstants.getPropertyMap().get("username"))
                 .enterPassword(GlobalConstants.getPropertyMap().get("password")).clickSubmitButton();
     }

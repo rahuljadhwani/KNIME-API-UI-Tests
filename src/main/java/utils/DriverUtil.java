@@ -5,11 +5,19 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Objects;
 
+
+/**
+ * This class handles logic for providing WebDriver instances in multi-threaded execution
+ *
+ */
 public class DriverUtil {
 
     private static ThreadLocal<WebDriver> webDriverThreadLocal = new ThreadLocal<>();
 
-    //private constructor to restrict object creation
+    /**
+    *
+    * private constructor to restrict object creation
+    */
     private DriverUtil() {
     }
 
