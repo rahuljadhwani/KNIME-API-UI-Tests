@@ -13,7 +13,7 @@ Clone this repository to your workspace.
    "mvn clean test -Dbrowser=chrome"
    "mvn clean test -Dbrowser=firefox"
    
-   Note: If you won't add "-Dbrowser" in above maven command, by default it will run on Chrome browser.
+  Note: If you won't add "-Dbrowser" in above maven command, by default it will run on Chrome browser.
 
 ******************************************************************************
 
