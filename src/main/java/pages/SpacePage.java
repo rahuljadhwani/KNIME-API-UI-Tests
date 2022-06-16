@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class SpacePage extends BasePage{
 
@@ -22,6 +23,7 @@ public class SpacePage extends BasePage{
     By changeVisibilityConfirmButton = By.xpath("//button[contains(text(),'make this space private')]");
 
     By currentSpaceName = By.xpath("//div[@class='confirmation']/descendant::strong");
+
 
 
     public Object verifySpaceCreated(){
@@ -85,7 +87,6 @@ public class SpacePage extends BasePage{
         //assert change visibility message
         return this;
     }
-
 
 
 }

@@ -6,10 +6,25 @@
         <listener class-name="listeners.ITestListenerImplementation"></listener>
     </listeners>
 
-
-    <test name="Test space creation">
+    <test name="Test space creation API">
+        <groups>
+            <run>
+                <include name="API"/>
+            </run>
+        </groups>
         <classes>
-            <class name="TestOne"/>
+            <class name="TestAPI"/>
+        </classes>
+    </test>
+
+    <test name="Test space creation UI">
+        <groups>
+            <run>
+                <include name="UI"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestUI"/>
         </classes>
     </test>
 

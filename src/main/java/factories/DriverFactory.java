@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Objects;
+
 public class DriverFactory {
 
     //private constructor to restrict object creation
@@ -14,19 +16,17 @@ public class DriverFactory {
 
     public static WebDriver getWebDriverForSpecifiedBrowser(String browser) {
 
-        switch (browser.toUpperCase()) {
-            case "CHROME": {
+        if (!Objects.isNull(browser)) {
+            if (browser.equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();
-            }
-            case "FIREFOX": {
+            } else if (browser.equalsIgnoreCase("firefox")) {
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
-
             }
-            default:
-                return null;
         }
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
     }
 }
 

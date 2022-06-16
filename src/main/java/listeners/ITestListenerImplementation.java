@@ -8,7 +8,7 @@ public class ITestListenerImplementation implements ITestListener, ISuiteListene
 
     @Override
     public void onTestStart(ITestResult result) {
-        ExtentReportsImplementation.createTest(result.getMethod().getMethodName());
+        ExtentReportsImplementation.createTest(result.getMethod().getDescription());
     }
 
     @Override

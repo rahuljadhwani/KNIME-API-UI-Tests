@@ -13,13 +13,28 @@ public class LoginPage extends BasePage{
         return this;
     }
 
+    public LoginPage enterUsernameWoLogging(String username){
+        sendKeys(usernameInputField, username);
+        return this;
+    }
+
     public LoginPage enterPassword(String password){
         sendKeys(passwordInputField, password, "Password");
         return this;
     }
 
+    public LoginPage enterPasswordWoLogging(String password){
+        sendKeys(passwordInputField, password);
+        return this;
+    }
+
     public UserDashboardPage clickSubmitButton(){
         click(submitButton, "Sign in button on login page");
+        return new UserDashboardPage();
+    }
+
+    public UserDashboardPage clickSubmitButtonWoLogging(){
+        click(submitButton);
         return new UserDashboardPage();
     }
 

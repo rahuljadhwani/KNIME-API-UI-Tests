@@ -22,6 +22,11 @@ public class UserDashboardPage extends BasePage{
         return this;
     }
 
+    public UserDashboardPage clickAvatarProfileWoLogging(){
+        click(userProfileIcon);
+        return this;
+    }
+
     public UserProfile clickUserProfile(){
         click(By.xpath(String.format(userSubMenu, "Profile")), "User profile link");
         return new UserProfile();
@@ -29,6 +34,11 @@ public class UserDashboardPage extends BasePage{
 
     public HomePage clickLogout(){
         click(By.xpath(String.format(userSubMenu, "Logout")), "Logout link");
+        return new HomePage();
+    }
+
+    public HomePage clickLogoutWoLogging(){
+        click(By.xpath(String.format(userSubMenu, "Logout")));
         return new HomePage();
     }
 

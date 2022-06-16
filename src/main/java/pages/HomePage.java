@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import reports.ExtentLogger;
 
 public class HomePage extends BasePage{
 
@@ -9,12 +10,30 @@ public class HomePage extends BasePage{
 
 
     public HomePage clickAcceptCookies() {
-        click(acceptCookiesButton, "Accept cookies and close button");
+        try{
+            click(acceptCookiesButton, "Accept cookies and close button");
+        } catch (Exception e){
+            ExtentLogger.info("Accept cookies dialog box didn't appear.");
+        }
+        return this;
+    }
+
+    public HomePage clickAcceptCookiesWithoutLogging() {
+        try{
+            click(acceptCookiesButton);
+        } catch (Exception e){
+            //add extent logging here later
+        }
         return this;
     }
 
     public LoginPage clickOnSignInButton(){
         click(signinButton, "Sign in button on home page");
+        return new LoginPage();
+    }
+
+    public LoginPage clickOnSignInButtonWithoutLogging(){
+        click(signinButton);
         return new LoginPage();
     }
 
