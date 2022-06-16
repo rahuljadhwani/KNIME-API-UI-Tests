@@ -9,8 +9,12 @@ How to run this framework?
 Clone this repository to your workspace.
 1. Open Terminal
 2. Navigate to cloned project folder where pom.xml is present
-3. Run one of the following commands: "mvn clean test -Dbrowser=chrome" or "mvn clean test -Dbrowser=firefox"
-Note: If you won't add "-Dbrowser" in above maven command, by default it will run on Chrome browser.
+3. Run one of the following commands: 
+  "mvn clean test -Dbrowser=chrome"
+   OR
+  "mvn clean test -Dbrowser=firefox"
+   
+  Note: If you won't add "-Dbrowser" in above maven command, by default it will run on Chrome browser.
 
 ******************************************************************************
 
