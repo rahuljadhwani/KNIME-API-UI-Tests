@@ -20,18 +20,22 @@ public class DriverFactory {
     }
 
     public static WebDriver getWebDriverForSpecifiedBrowser(String browser) {
-
+        WebDriver driver = null;
         if (!Objects.isNull(browser)) {
             if (browser.equalsIgnoreCase("chrome")) {
                 WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
+                driver = new ChromeDriver();
             } else if (browser.equalsIgnoreCase("firefox")) {
                 WebDriverManager.firefoxdriver().setup();
-                return new FirefoxDriver();
+                driver = new FirefoxDriver();
             }
+        } else {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
         }
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+
+        driver.manage().window().maximize();
+        return driver;
     }
 }
 

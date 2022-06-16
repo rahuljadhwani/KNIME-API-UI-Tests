@@ -40,6 +40,7 @@ public class BaseTest {
     }
 
     public static WebDriver getDriver(){
+        DriverUtil.getWebDriver().manage().window().maximize();
         return DriverUtil.getWebDriver();
     }
 

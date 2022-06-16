@@ -23,6 +23,7 @@ public class ITestListenerImplementation implements ITestListener, ISuiteListene
 
     @Override
     public void onTestFailure(ITestResult result) {
+        ExtentLogger.fail(result.getThrowable().toString());
          if(Arrays.asList(result.getMethod().getGroups()).contains("API")){
              ExtentLogger.fail(result.getMethod().getMethodName()+" has failed");
          }else ExtentLogger.failWithScreenshot(result.getMethod().getMethodName()+" has failed");
