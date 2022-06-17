@@ -8,7 +8,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
     int count  = 0;
     @Override
     public boolean retry(ITestResult result) {
-        if(count < GlobalConstants.RETRY_FAILED_TESTS_LIMIT){
+        if(count < GlobalConstants.getRETRY_FAILED_TESTS_LIMIT()){
             count++;
             return true;
         }

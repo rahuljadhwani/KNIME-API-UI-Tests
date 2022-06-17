@@ -18,7 +18,8 @@ public class GlobalConstants {
         GlobalConstants.setPropertyMap(PropertyReaderUtil.readPropertyFileAsMap(GlobalConstants.getFrameworkPropertyFilePath()));
     }
 
-    public static final int RETRY_FAILED_TESTS_LIMIT = 2;
+    @Getter
+    private static final int RETRY_FAILED_TESTS_LIMIT = 2;
 
     @Getter
     private static final String frameworkPropertyFilePath = "src/main/resources/project-details.properties";
