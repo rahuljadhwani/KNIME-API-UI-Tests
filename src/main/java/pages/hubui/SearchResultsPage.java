@@ -1,4 +1,4 @@
-package pages;
+package pages.hubui;
 
 import org.openqa.selenium.By;
 

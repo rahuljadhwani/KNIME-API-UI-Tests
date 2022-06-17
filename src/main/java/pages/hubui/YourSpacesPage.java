@@ -1,4 +1,4 @@
-package pages;
+package pages.hubui;
 
 import enums.SpaceTypes;
 import org.openqa.selenium.By;

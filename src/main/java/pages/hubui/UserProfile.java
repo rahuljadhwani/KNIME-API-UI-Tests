@@ -1,4 +1,4 @@
-package pages;
+package pages.hubui;
 
 public class UserProfile {
 }

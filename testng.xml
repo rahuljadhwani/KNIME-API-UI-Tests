@@ -4,6 +4,7 @@
     
     <listeners>
         <listener class-name="listeners.ITestListenerImplementation"></listener>
+        <listener class-name="utils.retryfailedtestsutil.RetryTransformer"></listener>
     </listeners>
 
     <test name="Test space creation API">

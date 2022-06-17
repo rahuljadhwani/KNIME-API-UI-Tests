@@ -1,9 +1,6 @@
 import constants.GlobalConstants;
-import enums.SpaceTypes;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.SpacePage;
-import pages.WelcomePage;
+import pages.hubui.HomePage;
 
 /**
  * This class contains UI test methods
@@ -35,22 +32,6 @@ public class TestUI extends BaseTest {
     public void testWebElementsOnYourSpacesPage(){
         loginToKNIMEHub().clickAvatarProfile().clickUserSpaces().verifyYourSpacesHeader()
                 .verifySpaceList().verifyCreateNewSpaceOptions().verifyFooterDetails();
-    }
-
-
-    private SpacePage createPublicSpace(){
-        return loginToKNIMEHub().clickAvatarProfile().clickUserSpaces().createSpace(SpaceTypes.PUBLIC)
-                .verifySpaceCreatedMessage();
-    }
-
-    private SpacePage createPrivateSpace(){
-        return loginToKNIMEHub().clickAvatarProfile().clickUserSpaces().createSpace(SpaceTypes.PRIVATE)
-                .verifySpaceCreatedMessage();
-    }
-
-    private WelcomePage loginToKNIMEHub(){
-        return new HomePage().clickAcceptCookies().clickOnSignInButton().enterUsername(GlobalConstants.getPropertyMap().get("username"))
-                .enterPassword(GlobalConstants.getPropertyMap().get("password")).clickSubmitButton();
     }
 
 }
