@@ -36,4 +36,4 @@ Below mentioned improvements would be good to have if more time is spent on fram
 
 1. Data driven tests using @DataProvider and/or data can be fetched from an Excel sheet can be added.
 2. For sensitive data - advanced encryption techniques and processes like "git-crypt" can be implemented(requires extra installations and gnupg key generations in every repository- collaborator systems)
-3. If required - Email and password can be removed completely from properties file, and can be added explicitly in mvn command with VM options(-D<key>=<value>)
+3. If required - Email and password can be removed completely from properties file, and can be added explicitly in mvn command with VM options(-D\<key>=\<value>) for execution. Then command will look like "mvn clean test -Dbrowser=chrome -Demail=\<user-email> -Dpassword=\<user-password>".
